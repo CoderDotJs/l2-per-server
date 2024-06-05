@@ -1,0 +1,106 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String     @id @default(uuid())
+  userName  String     @unique
+  email     String     @unique
+  password  String
+  role      userRole   @default(USER)
+  status    userStatus @default(ACTIVE)
+  address   String?
+  city      String?
+  phone     String?
+  zip       String?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  adoptions Adoption[]
+  Pet       Pet[]
+
+  @@map("users")
+}
+
+//completed 
+model Pet {
+  id              String       @id @default(uuid())
+  name            String
+  photos          String[]
+  description     String
+  age             Int
+  petType         PetTypeData
+  breed           String
+  gender          Gender
+  healthStatus    HealthStatus
+  currentLocation String
+  size            AnimalSize
+  specialNeeds    Boolean      @default(false)
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+  userId          String
+  user            User         @relation(fields: [userId], references: [id])
+  Adoption        Adoption[]
+}
+
+model Adoption {
+  id             String         @id @default(uuid())
+  petId          String
+  userId         String
+  date           String
+  status         AdoptionStatus
+  additionalInfo String
+  pet            Pet            @relation(fields: [petId], references: [id])
+  user           User           @relation(fields: [userId], references: [id])
+}
+
+enum AdoptionStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum AnimalSize {
+  small
+  medium
+  large
+}
+
+enum Gender {
+  MALE
+  FEMALE
+}
+
+enum PetTypeData {
+  dog
+  cat
+  cow
+  bird
+  others
+}
+
+enum HealthStatus {
+  HEALTHY
+  ILL
+  RECOVERING
+}
+
+enum userRole {
+  SUPPER_ADMIN
+  ADMIN
+  USER
+}
+
+enum userStatus {
+  ACTIVE
+  BLOCKED
+  DELETED
+}
