@@ -48,21 +48,15 @@ To set up the project locally, follow these steps:
 
 Once the application is up and running, open your browser and navigate to `http://localhost:3000` to start using the Lost and Found platform.
 
-### Reporting Lost Items
+### Adopt
 
 1. Sign up or log in to your account.
-2. Navigate to the "Report Lost Item" section.
-3. Fill out the form with the item details and submit.
+2. Navigate to the "Pets" section.
+3. Fill out the form to adopt
 
-### Reporting Found Items
+### Searching for Pet
 
-1. Sign up or log in to your account.
-2. Navigate to the "Report Found Item" section.
-3. Fill out the form with the item details and submit.
-
-### Searching for Items
-
-1. Use the search bar on all found items and all lost items.
+1. Use the search bar on all pets.
 2. Apply filters category and search results .
 
 ## License
@@ -74,5 +68,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 For any inquiries or support, please contact us at [support@akash.com](mailto:support@akash.com)
 
 ---
-
-Thank you for using Lost and Found! We hope our platform helps you reconnect with your belongings.
