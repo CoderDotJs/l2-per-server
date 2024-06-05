@@ -1,6 +1,6 @@
 # Pet Adoption
 
-Welcome to **Per Adoption**, a web application designed to help users report and find lost items. Our mission is to reconnect people with their belongings through a simple and effective platform.
+Welcome to **Per Adoption**, a web application designed to help users find pets to adopt. Our mission is to reconnect people with their belonved pets through a simple and effective platform.
 
 ## Table of Contents
 

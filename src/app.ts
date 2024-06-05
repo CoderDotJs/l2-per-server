@@ -8,7 +8,11 @@ import globalErrorHandaller from "./app/middlewares/globalErrorHandaller";
 const app = express();
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001"],
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:3001",
+      "https://l2-pet-client.vercel.app",
+    ],
     credentials: true,
   })
 );
